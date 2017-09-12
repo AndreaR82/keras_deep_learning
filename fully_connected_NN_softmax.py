@@ -13,13 +13,12 @@ from keras.layers import Dense, Dropout, Activation
 from keras.optimizers import SGD
 import numpy as np
 import keras
-import os
-
+import os  # sets wd
 
 
 # Generate dummy data
-n_train = 100000
-n_test = 20000
+n_train = 1000
+n_test = 200
 n_input = 200
 x_train = np.random.random((n_train, n_input))
 y_train = keras.utils.to_categorical(np.random.randint(10,                                                             size=(n_train, 1)), num_classes=10)
