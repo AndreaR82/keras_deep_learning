@@ -11,6 +11,8 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
+import pydot
+
 
 batch_size = 128  # orig was 128
 num_classes = 10
@@ -76,3 +78,9 @@ model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+
+
+# Plot net
+from keras.utils import plot_model
+plot_model(model, to_file='/home/andrea/Documents/repos/keras_deep_learning/Plots/model.png')
+
